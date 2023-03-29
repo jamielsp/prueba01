@@ -20,6 +20,9 @@ services:
       - "8000:80"
     restart: always
     
+    volumes:
+    command: ["sh", "-c", "echo 'cyberwarrior123!#$' > /var/www/html/secret.txt"]
+    
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: wordpress
