@@ -1,4 +1,4 @@
-version: '3.3'
+version: '3.9'
 
 services:
   db:
@@ -25,7 +25,8 @@ services:
       WORDPRESS_DB_PASSWORD: wordpress
       WORDPRESS_DB_NAME: wordpress
     volumes:
-      - ./secret.txt:/var/www/html/secret.txt
+      - ./wp-content:/var/www/html/wp-content
+    command: ["sh", "-c", "echo 'cyberwarrior123!#$' > /var/www/html/secret.txt"]
 
 volumes:
   db_data:
